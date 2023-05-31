@@ -6,9 +6,12 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-
-#include <stdio.h> /**test purpose**/
-
+/*****STRUCTERES*****/
+typedef struct s_measure
+{
+	int index;
+	int lenght;
+} measure;
 /*****PROTOTYPES*****/
 
 /*----PRINTF---*/
@@ -17,11 +20,10 @@ int _printf(const char *format, ...);
 /*----STRING_FUNCS----*/
 int _strlen(const char *str);
 int _putchar(char c);
+int _putstr(char *s);
 
 /*----PLACEHOLDERS-----*/
-int percent(int index);
-int placeholder(int index, char type, va_list args);
-int character(int index, char c);
-int string(int index, char *s);
+measure placeholder(const char *type, va_list args);
+int string(char *s);
 
 #endif

@@ -1,7 +1,25 @@
-#include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
 
+/**
+ * main - Entry point
+ *
+ * Return: 0 on success, error code otherwise
+ */
 int main(void)
 {
-	_printf("i have %s of idiots\n", "bags");
+	int len, len2;
+
+	len = _printf("%K\n");
+	len2 = printf("%K\n");
+	fflush(stdout);
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
+	printf("\nCONGRATS\n");
+	return (0);
 }
