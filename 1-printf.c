@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 			rtn = placeholder(&format[index], args);
 			if (rtn.index == -1)
 			{
-				return(-1);
+				return (-1);
 			}
 			index += rtn.index;
 			lenght += rtn.lenght;

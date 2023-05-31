@@ -19,10 +19,7 @@ measure placeholder(const char *type, va_list args)
 	{
 		++repeations > 1 ? tmp.index++ : tmp.index;
 		type++;
-		if (*type == ' ')
-
-			type++;
-
+		*type == ' ' ? type++ : type;
 		switch (*type)
 		{
 			case '%':
@@ -40,15 +37,13 @@ measure placeholder(const char *type, va_list args)
 			case '\0':
 				tmp.lenght = -1;
 				tmp.index = -1;
-				return(tmp);
+				return (tmp);
 			default:
 				tmp.lenght += _putchar('%');
 				if (space != 0)
 					tmp.lenght += _putchar(' ');
-
 				if (*(type + 1) == '\0')
 					tmp.index = -1;
-
 				return (tmp);
 		}
 		type++;
@@ -64,7 +59,7 @@ int string(char *s)
 {
 	if (s == NULL)
 	{
-		return(_putstr("(null)"));
+		return (_putstr("(null)"));
 	}
-	return(_putstr(s));
+	return (_putstr(s));
 }

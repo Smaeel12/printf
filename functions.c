@@ -21,7 +21,7 @@ int _putchar(char c)
 int _putstr(char *s)
 {
 	write(STDOUT_FILENO, s, _strlen(s));
-	return(_strlen(s));
+	return (_strlen(s));
 }
 /**
  * _strlen - function that calculate the lenght of a string.
