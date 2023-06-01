@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * _printf - function that produces output based on a format.
  * @format: is a character string. The format string is

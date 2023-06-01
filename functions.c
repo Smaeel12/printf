@@ -37,3 +37,38 @@ int _strlen(const char *str)
 
 	return (lenght);
 }
+/**
+ * _itoa - function that converts an int to a string pointed to by str.
+ * @str: The converted value.
+ * @num: the number to convert.
+ */
+void _itoa(char *str, int num)
+{
+	int i = 0, j = 0;
+	char tmp;
+
+	if (num == 0)
+	{
+		str[i] = '0';
+		i++;
+	}
+	if (num < 0)
+	{
+		str[i] = '-';
+		num *= -1;
+		i++, j++;
+	}
+	for (; num != 0; i++)
+	{
+		str[i] = '0' + (num % 10);
+		num /= 10;
+	}
+	str[i] = '\0';
+	i--;
+	for (; j < i; i--, j++)
+	{
+		tmp = str[j];
+		str[j] = str[i];
+		str[i] = tmp;
+	}
+}
