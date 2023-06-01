@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 #include "main.h"
 
 /**
@@ -12,8 +11,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%d", INT_MIN);
-	len2 = printf("%d", INT_MIN);
+	len = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+	len2 = printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
 	fflush(stdout);
 	if (len != len2)
 	{
@@ -21,6 +20,5 @@ int main(void)
 		fflush(stdout);
 		return (1);
 	}
-	printf("\nCONGRATS\n");
 	return (0);
 }
