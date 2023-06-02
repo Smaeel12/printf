@@ -56,10 +56,57 @@ measure decimal(va_list arg)
 {
 	measure rtn;
 	int d = va_arg(arg, int);
-	char s[10];
+	char s[12];
 
 	_itoa(s, d);
 	rtn.lenght = _putstr(s);
+	rtn.index = 1;
+	return (rtn);
+}
+
+/**
+ * binary - function that handle converting
+	* the unsigned int arguments to binary.
+ * @arg: The decimal argument to print.
+ * Return: variable type measure
+ */
+measure binary(va_list arg)
+{
+	measure rtn;
+	int d = va_arg(arg, int);
+	int i, exponent = 32;
+	char *binary, *s;
+
+	if (d == 0)
+	{
+		rtn.lenght =  _putchar('0');
+		rtn.index = 1;
+		return (rtn);
+	}
+	binary = malloc(exponent + 1);
+	while ((d / _pow(2, exponent)) == 0 && exponent != 0)
+	{
+		if (d < 0)
+			binary[32 - exponent] = '1';
+		else
+			binary[32 - exponent] = '\0';
+		exponent--;
+	}
+	for (; exponent > 0; exponent--)
+	{
+		i = d / _pow(2, exponent);
+		if (i != 0)
+			binary[32 - exponent] = '1';
+		else
+			binary[32 - exponent] = '0';
+		d %= _pow(2, exponent);
+	}
+	binary[32] = '\0';
+	s = binary;
+	while (*s == '\0')
+		s++;
+	rtn.lenght = _putstr(s);
+	free(binary);
 	rtn.index = 1;
 	return (rtn);
 }

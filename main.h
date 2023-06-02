@@ -43,6 +43,7 @@ int _strlen(const char *str);
 int _putchar(char c);
 int _putstr(char *s);
 void _itoa(char *str, int num);
+int _pow(int num, int exponent);
 
 /*----PLACEHOLDERS-----*/
 measure placeholder(const char *type, va_list args);
@@ -50,5 +51,6 @@ measure percent(va_list);
 measure character(va_list arg);
 measure string(va_list arg);
 measure decimal(va_list arg);
+measure binary(va_list arg);
 
 #endif

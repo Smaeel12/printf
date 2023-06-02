@@ -72,3 +72,20 @@ void _itoa(char *str, int num)
 		str[i] = tmp;
 	}
 }
+/**
+ * _pow - function that calculate the power of a number
+ * @num: The number value.
+ * @exponent: the power.
+ * Return: the power of the number
+ */
+int _pow(int num, int exponent)
+{
+	int p = 1;
+	int i;
+
+	for (i = 1; i < exponent; i++)
+	{
+		p *= num;
+	}
+	return (p);
+}
