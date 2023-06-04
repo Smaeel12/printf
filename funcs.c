@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -42,22 +42,28 @@ int _strlen(const char *str)
  * @str: The converted value.
  * @num: the number to convert.
  */
-void _itoa(char *str, int num)
+void _itoa(char *str, int number)
 {
 	int i = 0, j = 0;
 	char tmp;
+	unsigned int num;
 
-	if (num == 0)
+	if (number == 0)
 	{
 		str[i] = '0';
 		i++;
 	}
-	if (num < 0)
+	if (number < 0)
 	{
 		str[i] = '-';
-		num *= -1;
+		num = number * -1;
 		i++, j++;
 	}
+	else
+	{
+		num = number;
+	}
+
 	for (; num != 0; i++)
 	{
 		str[i] = '0' + (num % 10);

@@ -30,7 +30,7 @@ typedef struct s_sp_funcs
 {
 	char specifier;
 
-	measure(*f)(va_list arg);
+	measure (*f)(va_list arg);
 } spfuncs;
 
 /*****PROTOTYPES*****/
@@ -42,7 +42,7 @@ int _printf(const char *format, ...);
 int _strlen(const char *str);
 int _putchar(char c);
 int _putstr(char *s);
-void _itoa(char *str, int num);
+void _itoa(char *str, int number);
 int _pow(int num, int exponent);
 
 /*----PLACEHOLDERS-----*/

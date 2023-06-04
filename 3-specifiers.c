@@ -56,7 +56,7 @@ measure decimal(va_list arg)
 {
 	measure rtn;
 	int d = va_arg(arg, int);
-	char s[12];
+	char s[20];
 
 	_itoa(s, d);
 	rtn.lenght = _putstr(s);
