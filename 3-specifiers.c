@@ -106,8 +106,7 @@ measure binary(va_list arg)
 	while (*s == '\0')
 		s++;
 	rtn.lenght = _putstr(s);
-	free(binary);
-	free(s);
 	rtn.index = 1;
+	free(binary);
 	return (rtn);
 }
