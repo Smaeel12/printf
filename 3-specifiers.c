@@ -107,6 +107,7 @@ measure binary(va_list arg)
 		s++;
 	rtn.lenght = _putstr(s);
 	free(binary);
+	free(s);
 	rtn.index = 1;
 	return (rtn);
 }

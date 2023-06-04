@@ -30,7 +30,7 @@ typedef struct s_sp_funcs
 {
 	char specifier;
 
-	measure (*f)(va_list arg);
+	measure(*f)(va_list arg);
 } spfuncs;
 
 /*****PROTOTYPES*****/

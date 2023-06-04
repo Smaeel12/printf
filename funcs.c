@@ -40,7 +40,7 @@ int _strlen(const char *str)
 /**
  * _itoa - function that converts an int to a string pointed to by str.
  * @str: The converted value.
- * @num: the number to convert.
+ * @number: the number to convert.
  */
 void _itoa(char *str, int number)
 {
