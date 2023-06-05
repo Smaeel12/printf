@@ -66,7 +66,7 @@ measure decimal(va_list arg)
 
 /**
  * binary - function that handle converting
-	* the unsigned int arguments to binary.
+ * the unsigned int arguments to binary.
  * @arg: The decimal argument to print.
  * Return: variable type measure
  */
@@ -79,11 +79,13 @@ measure binary(va_list arg)
 
 	if (d == 0)
 	{
-		rtn.lenght =  _putchar('0');
+		rtn.lenght = _putchar('0');
 		rtn.index = 1;
 		return (rtn);
 	}
 	binary = malloc(exponent + 1);
+	if (binary == NULL)
+		exit(1);
 	while ((d / _pow(2, exponent)) == 0 && exponent != 0)
 	{
 		if (d < 0)
@@ -95,10 +97,7 @@ measure binary(va_list arg)
 	for (; exponent > 0; exponent--)
 	{
 		i = d / _pow(2, exponent);
-		if (i != 0)
-			binary[32 - exponent] = '1';
-		else
-			binary[32 - exponent] = '0';
+		binary[32 - exponent] = i + '0';
 		d %= _pow(2, exponent);
 	}
 	binary[32] = '\0';
@@ -107,6 +106,7 @@ measure binary(va_list arg)
 		s++;
 	rtn.lenght = _putstr(s);
 	rtn.index = 1;
-	free(binary);
+	if (binary != NULL)
+		free(binary);
 	return (rtn);
 }

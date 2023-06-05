@@ -10,8 +10,8 @@ measure placeholder(const char *type, va_list args)
 {
 	int repeations = 0;
 	spfuncs sp_arr[] = {{'%', percent}, {'c', character}, {'s', string},
-				{'i', decimal}, {'d', decimal}, { 'b', binary},
-				{'\0', NULL}};
+	{'i', decimal}, {'d', decimal}, {'b', binary}, {'u', uniint}, {'o', unioctal},
+	{'x', unihex}, {'X', uniHEX}, {'\0', NULL}};
 	measure tmp, rtn;
 	int status = 0;
 

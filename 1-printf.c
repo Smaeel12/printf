@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	int index;
 	va_list args;
-	int lenght;
+	int lenght = 0;
 	measure rtn;
 
 	if (format == NULL)
@@ -37,5 +37,6 @@ int _printf(const char *format, ...)
 			lenght += _putchar(format[index]);
 		}
 	}
+	va_end(args);
 	return (lenght);
 }

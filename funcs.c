@@ -42,7 +42,7 @@ int _strlen(const char *str)
  * @str: The converted value.
  * @number: the number to convert.
  */
-void _itoa(char *str, int number)
+void _itoa(char *str, long int number)
 {
 	int i = 0, j = 0;
 	char tmp;
